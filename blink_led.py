@@ -21,16 +21,19 @@ pin = 21
 #     sleep((1/freq)/2)
 
 
-#WiringPi method
-import wiringpi as WPI
+#WiringPi method - WiringPi does not work, remember to document issues in report
+# import wiringpi as WPI
+# 
+# WPI.wiringPiSetupGpio()
+# WPI.softToneCreate(pin)
+# WPI.softToneWrite(pin, freq)
+# 
+# while True:
+#     #do nothing
+#     pass
+# WPI.softToneWrite(pin, 0)
 
-WPI.wiringPiSetupGpio()
-WPI.softToneCreate(pin)
-WPI.softToneWrite(pin, freq)
+#pigpio method
 
-while True:
-    #do nothing
-    pass
-WPI.softToneWrite(pin, 0)
 
 
