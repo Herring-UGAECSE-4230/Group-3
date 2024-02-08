@@ -1,4 +1,8 @@
-x = input(rpi.output(x_coord + X_OFFSET, rpi.LOW))
+import RPi.GPIO as rpi
+from time import sleep
+
+
+
 pin_list = [4,27,25,12,13,5,6,26]
 
 rpi.setmode(pin_list, rpi.OUT)
@@ -12,6 +16,7 @@ e = 13
 f = 5
 g = 6
 DP = 26
+CLK = 16
 
 #setting seven segment values
 one = [f,e]
@@ -29,71 +34,76 @@ B = [a,b,c,d,e,f,g,DP]
 C = [a,d,e,f]
 D = [a,b,c,d,e,f,DP]
 
+
+def flip_flop(x):
+        
+        
 #sending values to flip flop
-match x:
-    case "1":
-       rpi.output(pin_list.LOW)
-       rpi.output(one, rpi.HIGH) 
+        if x == "1":
+                rpi.output(pin_list.LOW)
+                rpi.output(one, rpi.HIGH)
+                
+        elif x == "2":
+                rpi.output(pin_list.LOW)
+                rpi.output(two, rpi.HIGH)
 
-    case "2":
-        rpi.output(pin_list.LOW)
-        rpi.output(two, rpi.HIGH)
+        elif x == "3":
+                rpi.output(pin_list.LOW)
+                rpi.output(three, rpi.HIGH)
+        
+        elif x == "4":
+                rpi.output(pin_list.LOW)
+                rpi.output(four, rpi.HIGH)
 
-    case "3":
-        rpi.output(pin_list.LOW)
-        rpi.output(three, rpi.HIGH)
-    
-    case "4":
-        rpi.output(pin_list.LOW)
-        rpi.output(four, rpi.HIGH)
+        elif x == "5":
+                rpi.output(pin_list.LOW)
+                rpi.output(five, rpi.HIGH)
 
-    case "5":
-        rpi.output(pin_list.LOW)
-        rpi.output(five, rpi.HIGH)
+        elif x == "6":
+                rpi.output(pin_list.LOW)
+                rpi.output(six, rpi.HIGH)
 
-    case "6":
-        rpi.output(pin_list.LOW)
-        rpi.output(six, rpi.HIGH)
+        elif x == "7":
+                rpi.output(pin_list.LOW)
+                rpi.output(seven, rpi.HIGH)
 
-    case "7":
-        rpi.output(pin_list.LOW)
-        rpi.output(seven, rpi.HIGH)
+        elif x == "8":
+                rpi.output(pin_list.LOW)
+                rpi.output(eight, rpi.HIGH)
+        
+        elif x == "9":
+                rpi.output(pin_list.LOW)
+                rpi.output(nine, rpi.HIGH)
 
-    case "8":
-        rpi.output(pin_list.LOW)
-        rpi.output(eight, rpi.HIGH)
-    
-    case "9":
-        rpi.output(pin_list.LOW)
-        rpi.output(nine, rpi.HIGH)
+        elif x == "0":
+                rpi.output(pin_list.LOW)
+                rpi.output(zero, rpi.HIGH)
 
-    case "0":
-        rpi.output(pin_list.LOW)
-        rpi.output(zero, rpi.HIGH)
+        elif x == "A":
+                rpi.output(pin_list.LOW)
+                rpi.output(A, rpi.HIGH)
 
-    case "A":
-        rpi.output(pin_list.LOW)
-        rpi.output(A, rpi.HIGH)
+        elif x == "B":
+                rpi.output(pin_list.LOW)
+                rpi.output(B, rpi.HIGH)
 
-    case "B":
-        rpi.output(pin_list.LOW)
-        rpi.output(B, rpi.HIGH)
+        elif x == "C":
+                rpi.output(pin_list.LOW)
+                rpi.output(C, rpi.HIGH)
+        
+        elif x == "D":
+                rpi.output(pin_list.LOW)
+                rpi.output(D, rpi.HIGH)
+        elif x == "#":
+                rpi.output(pin_list.LOW)
+                rpi.output(g, rpi.HIGH)
+        
+        elif x == "*":
+                rpi.output(pin_list.LOW)
+                rpi.output(DP, rpi.HIGH)
 
-    case "C":
+        rpi.output(CLK,rpi.HIGH)
+        sleep(1/sample_rate)
+        rpi.output(CLK,rpi.LOW)
+        sleep(1/sample_rate)
         rpi.output(pin_list.LOW)
-        rpi.output(C, rpi.HIGH)
-    
-    case "D":
-        rpi.output(pin_list.LOW)
-        rpi.output(D, rpi.HIGH)
-
-    case "#":
-        rpi.output(pin_list.LOW)
-        rpi.output(DP, rpi.HIGH)
-   
-    case "*":
-        rpi.output(pin_list.LOW)
-        rpi.output(*, rpi.HIGH)
-
-    case _:
-        rpi.output(pin_list, rpi.LOW)

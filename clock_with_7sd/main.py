@@ -1,4 +1,5 @@
 import keypad
+import seven_segment_code
 from queue import Queue
 from threading import Thread
 
@@ -9,4 +10,5 @@ inputThread.start()
 
 while True:
     input = q.get()
+    flip_flop(input)
     print(input + "\n")
