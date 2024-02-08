@@ -9,7 +9,9 @@ def auto_clock():
         if hour > 12:
             hour = hour - 12
 
+        ssd_h = '{0:02d}'.format(hour)
+        ssd_m = '{0:02d}'.format(minute)
+
+        print(ssd_h, ":", ssd_m)
         
-        print('{0:02d}'.format(hour), ":", '{0:02d}'.format(minute))
-
-
+auto_clock()
