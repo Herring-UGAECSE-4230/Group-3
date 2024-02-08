@@ -1,7 +1,14 @@
 from datetime import datetime
 from time import sleep
+import seven_segment_code
 import RPi.GPIO as rpi
 
+
+
+CLK1 = 16
+CLK2 = 9
+CLK3 = 10
+CLK4 = 11
 
 def auto_clock():
 
@@ -22,33 +29,35 @@ def auto_clock():
 
         for i, val in enumerate(clock_list):
             clock = i + 1
-            digit = val
+
+            x = str(val)
+            seven_segment_code.flip_flop(x)
 
             if clock == 1:
                 rpi.output(CLK1,rpi.HIGH)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(CLK1,rpi.LOW)
-                sleep(1/sample_rate)
+                sleep(0.01)
 
             elif clock == 2:
                 rpi.output(CLK2,rpi.HIGH)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(CLK2,rpi.LOW)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(pin_list.LOW)
 
             elif clock == 3:
                 rpi.output(CLK3,rpi.HIGH)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(CLK3,rpi.LOW)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(pin_list.LOW)
 
             elif clock == 4:
                 rpi.output(CLK4,rpi.HIGH)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(CLK4,rpi.LOW)
-                sleep(1/sample_rate)
+                sleep(0.01)
                 rpi.output(pin_list.LOW)
         
             
