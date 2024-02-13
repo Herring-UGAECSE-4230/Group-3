@@ -2,7 +2,7 @@ from datetime import datetime
 from time import sleep
 import seven_segment_code
 import RPi.GPIO as rpi
-
+from seven_segment_code import pin_list
 
 
 CLK1 = 16
