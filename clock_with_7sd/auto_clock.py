@@ -44,22 +44,17 @@ def auto_clock():
                 sleep(0.01)
                 rpi.output(CLK2,rpi.LOW)
                 sleep(0.01)
-                rpi.output(pin_list.LOW)
 
             elif clock == 3:
                 rpi.output(CLK3,rpi.HIGH)
                 sleep(0.01)
                 rpi.output(CLK3,rpi.LOW)
                 sleep(0.01)
-                rpi.output(pin_list.LOW)
 
             elif clock == 4:
                 rpi.output(CLK4,rpi.HIGH)
                 sleep(0.01)
                 rpi.output(CLK4,rpi.LOW)
-                sleep(0.01)
-                rpi.output(pin_list.LOW)
-        
+                sleep(0.01)        
             
 
-auto_clock()
