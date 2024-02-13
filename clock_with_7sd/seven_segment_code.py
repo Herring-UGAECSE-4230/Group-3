@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-
-x = input(rpi.output(x_coord + X_OFFSET, rpi.LOW))
-=======
 import RPi.GPIO as rpi
 from time import sleep
 
 
 
->>>>>>> 3a99581761a99c8839067e49694a78b9616e86c1
 pin_list = [4,27,25,12,13,5,6,26]
 
 rpi.setmode(pin_list, rpi.OUT)
@@ -107,8 +102,8 @@ def flip_flop(x):
                 rpi.output(pin_list.LOW)
                 rpi.output(DP, rpi.HIGH)
 
-        rpi.output(CLK,rpi.HIGH)
-        sleep(1/sample_rate)
-        rpi.output(CLK,rpi.LOW)
-        sleep(1/sample_rate)
-        rpi.output(pin_list.LOW)
+#        rpi.output(CLK,rpi.HIGH)
+#       sleep(1/sample_rate)
+#        rpi.output(CLK,rpi.LOW)
+#        sleep(1/sample_rate)
+#        rpi.output(pin_list.LOW)
