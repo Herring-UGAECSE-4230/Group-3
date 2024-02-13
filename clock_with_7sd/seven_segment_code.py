@@ -103,7 +103,7 @@ def flip_flop(x):
                 rpi.output(DP, rpi.HIGH)
 
 #        rpi.output(CLK,rpi.HIGH)
-#       sleep(1/sample_rate)
+#        sleep(1/sample_rate)
 #        rpi.output(CLK,rpi.LOW)
 #        sleep(1/sample_rate)
 #        rpi.output(pin_list.LOW)
