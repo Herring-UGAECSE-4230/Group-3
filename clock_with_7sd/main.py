@@ -1,7 +1,11 @@
 import keypad
+import auto_clock
 import seven_segment_code
 from queue import Queue
 from threading import Thread
+from four_ssd import four_ssd
+
+#auto_clock.auto_clock()
 
 q = Queue()
 
@@ -10,6 +14,8 @@ inputThread.start()
 
 prev_state = '1'
 output_on = True
+
+four_ssd(q)
 
 while True:
     input = q.get()

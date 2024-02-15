@@ -38,7 +38,7 @@ C = [a,d,e,f]
 D = [b,c,d,e,g]
 
 
-def flip_flop(x, on, prev_state):
+def flip_flop(x, on, prev_state, dp):
         #sending values to flip flop
         if x == "#":
                 if not on:
@@ -103,6 +103,8 @@ def flip_flop(x, on, prev_state):
         
         elif x == "*":
                 rpi.output(pin_list, rpi.LOW)
+                rpi.output(DP, rpi.HIGH)
+        if dp:
                 rpi.output(DP, rpi.HIGH)
 
 #        rpi.output(CLK,rpi.HIGH)
