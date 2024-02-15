@@ -2,7 +2,6 @@ from seven_segment_code import flip_flop
 import RPi.GPIO as rpi
 from auto_clock import pin_list
 from time import sleep
-from queue import Queue
 from main import input
 
 CLK_list = [1,2,3,4]
