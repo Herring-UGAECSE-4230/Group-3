@@ -16,12 +16,14 @@ def auto_clock():
 
 
     while True:
-
+        
+        #gets current time from datetime library
         sleep(.25)
         now=datetime.now()
         minute = now.minute
         hour = now.hour
 
+        #converts clock into 12 hour clock and turns on dot to denote pm
         if hour > 12:
             hour = hour - 12
             rpi.output(DP,rpi.HIGH)
@@ -34,13 +36,14 @@ def auto_clock():
             rpi.output(CLK4,rpi.HIGH)
             sleep(0.01)
             rpi.output(CLK4,rpi.LOW)
-            sleep(0.01)     
+            sleep(0.01)    
 
+        #making the time into a list of strings
         clock_string = ('{0:02d}'.format(hour) + '{0:02d}'.format(minute))
         clock_list = [*clock_string]
 
         
-
+        #reads each item in the and pulses its corresponding clock
         for i, val in enumerate(clock_list):
             clock = i + 1
 

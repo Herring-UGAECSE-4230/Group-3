@@ -105,8 +105,8 @@ def flip_flop(x, on, prev_state):
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(DP, rpi.HIGH)
 
-        rpi.output(CLK,rpi.HIGH)
-        sleep(.01)
-        rpi.output(CLK,rpi.LOW)
-        sleep(.01)
-        rpi.output(pin_list, rpi.LOW)
+#        rpi.output(CLK,rpi.HIGH)
+#        sleep(.01)
+#        rpi.output(CLK,rpi.LOW)
+#        sleep(.01)
+#        rpi.output(pin_list, rpi.LOW)
