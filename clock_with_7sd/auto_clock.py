@@ -4,7 +4,7 @@ import seven_segment_code
 import RPi.GPIO as rpi
 from seven_segment_code import pin_list
 from seven_segment_code import DP
-import keypad
+
 
 CLK1 = 16
 CLK2 = 9
