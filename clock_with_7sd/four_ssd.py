@@ -1,6 +1,5 @@
 from seven_segment_code import flip_flop
 import RPi.GPIO as rpi
-from auto_clock import pin_list
 from time import sleep
 from main import input
 
