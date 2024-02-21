@@ -38,70 +38,70 @@ C = [a,d,e,f]
 D = [b,c,d,e,g]
 
 
-def flip_flop(x, on, prev_state, dp):
+def flip_flop(input, on, prev_state, dp):
         #sending values to flip flop
-        if x == "#":
+        if input == "#":
                 if not on:
                         rpi.output(pin_list, rpi.LOW)
                 else:
-                        x = prev_state
-        if x == "1":
+                        input = prev_state
+        if input == "1":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(one, rpi.HIGH)
                 
-        elif x == "2":
+        elif input == "2":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(two, rpi.HIGH)
 
-        elif x == "3":
+        elif input == "3":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(three, rpi.HIGH)
         
-        elif x == "4":
+        elif input == "4":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(four, rpi.HIGH)
 
-        elif x == "5":
+        elif input == "5":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(five, rpi.HIGH)
 
-        elif x == "6":
+        elif input == "6":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(six, rpi.HIGH)
 
-        elif x == "7":
+        elif input == "7":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(seven, rpi.HIGH)
 
-        elif x == "8":
+        elif input == "8":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(eight, rpi.HIGH)
         
-        elif x == "9":
+        elif input == "9":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(nine, rpi.HIGH)
 
-        elif x == "0":
+        elif input == "0":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(zero, rpi.HIGH)
 
-        elif x == "A":
+        elif input == "A":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(A, rpi.HIGH)
 
-        elif x == "B":
+        elif input == "B":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(B, rpi.HIGH)
 
-        elif x == "C":
+        elif input == "C":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(C, rpi.HIGH)
         
-        elif x == "D":
+        elif input == "D":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(D, rpi.HIGH)
         
-        elif x == "*":
+        elif input == "*":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(DP, rpi.HIGH)
         if dp:
