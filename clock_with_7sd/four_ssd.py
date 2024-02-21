@@ -4,6 +4,8 @@ from time import sleep
 from queue import Queue
 from main import prev_state
 
+
+
 CLK_list = [0,1,2,3]
 CLK_GPIO = [16,9,10,11]
 pin_list = [4,27,25,12,13,5,6,26]
