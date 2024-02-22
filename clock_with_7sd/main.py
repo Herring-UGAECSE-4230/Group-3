@@ -23,4 +23,4 @@ while True:
         output_on = not output_on
     else:
         prev_state = input
-    seven_segment_code.flip_flop(input, output_on, prev_state)
+    #seven_segment_code.flip_flop(input, output_on, prev_state)
