@@ -2,7 +2,7 @@ from time import sleep
 #from four_ssd import time_string
 
 
-time_string = "1650"
+time_string = "1648"
 
 def man_clock(time_string):
 
@@ -11,8 +11,8 @@ def man_clock(time_string):
 
     while True:
 
-   
-        sleep(1)
+        sleep(60)
+
         if hour > 12:
                 hour = hour -12
 
@@ -26,5 +26,6 @@ def man_clock(time_string):
                 
 
         print('{0:02d}'.format(hour) +":"+ '{0:02d}'.format(min))
+
 
 man_clock(time_string)
