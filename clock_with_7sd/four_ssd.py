@@ -3,12 +3,9 @@ import RPi.GPIO as rpi
 from time import sleep
 from queue import Queue
 
-
-
-CLK_list = [0,1,2,3]
 CLK_GPIO = [16,9,10,11]
 pin_list = [4,27,25,12,13,5,6,26]
-led_pin = 1 #change to pin used for led
+led_pin = 14 #change to pin used for led
 prev_states = ["0", "0", "0", "0"]
 
 
@@ -17,24 +14,18 @@ rpi.setup(led_pin, rpi.OUT)
 
 
 def four_ssd(q):
-    led_state = False
     output_on = True
     dp = False
 
     while True:
-
-        if led_state == True:
-            rpi.output(led_pin, rpi.HIGH)
-        elif led_state == False:
-            rpi.output(led_pin, rpi.LOW)
-
-            for i in CLK_list:
-                input = q.get()
-                if input != "A"or"B"or"C"or"D":
-                    led_state = False
-                else:
-                    led_state = True
-                    i = i - 1
+        i = 0
+        while i < 4:
+            input = q.get()
+            if (input == "A" or input == "B" or input == "C" or input == "D"):
+                rpi.output(led_pin, rpi.HIGH)
+                print("Bad input")
+            else:
+                rpi.output(led_pin, rpi.LOW)
                 if (input == '#'):
                     output_on = not output_on
                     for x in range (4):
@@ -53,3 +44,4 @@ def four_ssd(q):
                 rpi.output(CLK_GPIO[i],rpi.LOW)
                 sleep(0.01)
                 dp = False
+                i = i + 1
