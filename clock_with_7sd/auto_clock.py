@@ -32,7 +32,7 @@ def auto_clock():
             hour = hour - 12
             dp = True
         else:
-            rpi.output(DP,rpi.LOW)
+            rpi.output(seven_segment_code.DP,rpi.LOW)
             rpi.output(CLK4,rpi.HIGH)
             sleep(0.01)
             rpi.output(CLK4,rpi.LOW)
