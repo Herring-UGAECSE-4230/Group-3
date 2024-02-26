@@ -11,6 +11,8 @@ CLK4 = 11
 
 CLK_list = [CLK1, CLK2, CLK3, CLK4]
 
+dp = False
+
 rpi.setmode(rpi.BCM)
 rpi.setup(CLK_list, rpi.OUT)
 
@@ -25,6 +27,7 @@ def man_clock(time_string):
             hour = hour -12
             dp = True
         else:
+            dp = False
             rpi.output(seven_segment_code.DP,rpi.LOW)
             rpi.output(CLK4,rpi.HIGH)
             sleep(0.01)
