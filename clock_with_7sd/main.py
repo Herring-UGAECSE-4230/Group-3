@@ -4,6 +4,7 @@ import seven_segment_code
 from queue import Queue
 from threading import Thread
 from four_ssd import four_ssd
+from manual_clock import man_clock
 
 #auto_clock.auto_clock()
 
@@ -15,12 +16,9 @@ inputThread.start()
 prev_state = '1'
 output_on = True
 
-four_ssd(q)
+#print("Calling man clock")
+man_clock("1150")
 
-while True:
-    input = q.get()
-    if (input == '#'):
-        output_on = not output_on
-    else:
-        prev_state = input
-    #seven_segment_code.flip_flop(input, output_on, prev_state)
+#while True:
+    #four_ssd(q)
+

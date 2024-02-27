@@ -3,6 +3,8 @@ import RPi.GPIO as rpi
 from time import sleep
 from queue import Queue
 
+rpi.setwarnings(False)
+
 CLK_GPIO = [16,9,10,11]
 pin_list = [4,27,25,12,13,5,6,26]
 led_pin = 14 #change to pin used for led
@@ -28,6 +30,7 @@ def four_ssd(q):
             rpi.output(led_pin, rpi.LOW)
             if (input == '#'):
                 output_on = not output_on
+                i = i - 1
                 for x in range (4):
                     flip_flop(input, output_on, prev_states[x], dp)
                     rpi.output(CLK_GPIO[x],rpi.HIGH)
