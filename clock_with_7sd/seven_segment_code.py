@@ -1,8 +1,6 @@
 import RPi.GPIO as rpi
 from time import sleep
 
-
-
 pin_list = [4,27,25,12,13,5,6,26]
 
 rpi.setmode(rpi.BCM)
@@ -38,13 +36,11 @@ C = [a,d,e,f]
 D = [b,c,d,e,g]
 
 
-def flip_flop(input, on, prev_state, dp):
+def flip_flop(input, dp):
         #sending values to flip flop
-        if input == "#":
-                if not on:
-                        rpi.output(pin_list, rpi.LOW)
-                else:
-                        input = prev_state
+        if input == " ":
+                rpi.output(pin_list, rpi.LOW)
+
         if input == "1":
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(one, rpi.HIGH)
@@ -101,14 +97,5 @@ def flip_flop(input, on, prev_state, dp):
                 rpi.output(pin_list, rpi.LOW)
                 rpi.output(D, rpi.HIGH)
         
-        elif input == "*":
-                rpi.output(pin_list, rpi.LOW)
-                rpi.output(DP, rpi.HIGH)
         if dp:
                 rpi.output(DP, rpi.HIGH)
-
-#        rpi.output(CLK,rpi.HIGH)
-#        sleep(.01)
-#        rpi.output(CLK,rpi.LOW)
-#        sleep(.01)
-#        rpi.output(pin_list, rpi.LOW)
