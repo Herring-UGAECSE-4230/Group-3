@@ -1,4 +1,5 @@
 import keypad
+from display import display
 import auto_clock
 from queue import Queue
 from threading import Thread
@@ -16,6 +17,8 @@ inputThread.start()
 #output_on = True
 
 #main execution
+output = ["0", "0", "0", "0", " "]
+display(output)
 while True:
     entry(q)   
 
