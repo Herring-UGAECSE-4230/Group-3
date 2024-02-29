@@ -26,6 +26,7 @@ while True:
         time_string = auto_time()
     elif input == "B":
         time_string = entry(q)
+    display(time_string)
     i = 0
     while i < 600:
         if (not q.empty()):
@@ -42,7 +43,10 @@ while True:
                     input = q.get()
                     if input == "B":
                         break
-            sleep(.1)
-            if i == 599:
-                time_string = increment(time_string)
-                i = 0
+        sleep(.1)
+        if i == 599:
+            time_string = increment(time_string)
+            i = 0
+            display(time_string)
+        else:
+            i += 1

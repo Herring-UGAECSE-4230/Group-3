@@ -15,8 +15,9 @@ def increment(time_string):
         minute = 0
     
     #calculating rollover for 12->13 hrs and am/pm
-    if hour > 12:
-        hour -= 12
+    if hour >= 12:
+        if not(hour == 12):
+            hour -= 12
         pm = not(pm)
  
     #formatting new time string

@@ -6,6 +6,7 @@ def auto_time():
         now=datetime.now()
         minute = now.minute
         hour = now.hour
+        dp = False
 
         #converts clock into 12 hour clock and turns on dot to denote pm
         if hour >= 12:
