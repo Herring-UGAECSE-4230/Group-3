@@ -23,7 +23,9 @@ def entry(q):
             input[i] = '0'
             display(input)
             sleep(.2)
+        
         digit = q.get()
+
         if i == 0:
             if (digit == "0" or digit == "1" or digit == "2"):
                 input[i] = digit
