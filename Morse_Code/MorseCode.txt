@@ -1,14 +1,8 @@
-- . - . - | attention
--   . . . .   . .   . . . | this
-       ..   … | is
-       . - | a
-  .   …   - | test
-- . - | over
--   . . . .   . .   . . . | this
-       ..   … | is
-       - . - .   - - -   - .   . . .   . .   - . .   .   . - .   . - . . | considered
-       . - | a
-       . . .   .    - . - .   - - -   - .   - . . | second
-       - -   .   . . .   . . .   . -   - - .   . | message
-- . - | over
-. - . - . | out
+this
+is
+considered
+a
+second
+message
+over
+out
