@@ -11,7 +11,7 @@ codes_dict = {'ATTENTION':'- . - . -', 'A':'. - ', 'B':'-...', 'C':'-.-.', 'D':'
 '0':'-----' }
 
 
-with open(r'C:\Users\jorda\Desktop\Embedded I\Group-3\Morse_Code\MorseCode.txt') as file:#replace with pi path
+with open(r'C:\Users\jorda\Desktop\Embedded I\Group-3\Morse_Code\MorseCode.txt') as file: #replace with pi path
     lines = [line for line in file.readlines()]
 
 translation = ''
@@ -33,6 +33,8 @@ for word in lines:
 
 print (translation)
         
-            
+f = open('encoded_message.txt', 'w')
+f.write(translation)
+f.close()
 
 
