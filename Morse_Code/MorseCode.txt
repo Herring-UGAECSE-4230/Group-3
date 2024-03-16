@@ -1,8 +1,6 @@
+attention
 this
 is
-considered
 a
-second
+sample
 message
-over
-out
