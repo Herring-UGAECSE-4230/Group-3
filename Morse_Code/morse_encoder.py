@@ -52,7 +52,7 @@ for c in translation:
             RPI.output(pin, RPI.LOW)
             sleep(half_period)
 
-    elif c = '|':
+    elif c == '|':
         sleep(.5)
 
 f = open('encoded_message.txt', 'w')
