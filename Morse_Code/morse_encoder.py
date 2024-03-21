@@ -1,4 +1,4 @@
-import RPi.GPIO as rpi
+import RPi.GPIO as RPI
 from time import sleep
 import numpy as np
 
@@ -11,7 +11,7 @@ codes_dict = {'A':'. - ', 'B':'- . . .', 'C':'- . - .', 'D':'- . .', 'E':'.',
 '0':'- - - -  -' }
 
 
-with open(r'C:\Users\jorda\Desktop\Embedded I\Group-3\Morse_Code\MorseCode.txt') as file: #replace with pi path
+with open(r'MorseCode.txt') as file: #replace with pi path
     lines = [line for line in file.readlines()]
 translation = '- . - . - | ATTENTION \n'
 file.close()
@@ -30,30 +30,33 @@ for message in lines:
 print (translation)
 
 #Setup GPIO
-pin = 5
+pinList = [5,6]
 freq = 1000
 RPI.setwarnings(False)
 RPI.setmode(RPI.BCM)
-RPI.setup(pin, RPI.OUT, initial=RPI.LOW)
+RPI.setup(pinList, RPI.OUT, initial=RPI.LOW)
 half_period = ((1/freq)/2) #calculating sleep times for high and low sections
 
-for c in translation:
-    if c == '.':
-        for x in range(200):
-            RPI.output(pin, RPI.HIGH) #generating square wave
-            sleep(half_period)
-            RPI.output(pin, RPI.LOW)
-            sleep(half_period)
-        
-    elif c == '-':
-        for x in range(400):
-            RPI.output(pin, RPI.HIGH) #generating square wave
-            sleep(half_period)
-            RPI.output(pin, RPI.LOW)
-            sleep(half_period)
-
-    elif c = '|':
-        sleep(.5)
+# for c in translation:
+#     if c == '.':
+#         for x in range(250):
+#             RPI.output(pinList, RPI.HIGH) #generating square wave
+#             sleep(half_period)
+#             RPI.output(pinList, RPI.LOW)
+#             sleep(half_period)
+#         
+#     elif c == '-':
+#         for x in range(750):
+#             RPI.output(pinList, RPI.HIGH) #generating square wave
+#             sleep(half_period)
+#             RPI.output(pinList, RPI.LOW)
+#             sleep(half_period)
+# 
+#     elif c == ' ':
+#         sleep(.25)
+#         
+#     elif c == '|':
+#         sleep(1.5)
 
 f = open('encoded_message.txt', 'w')
 f.write(translation)
