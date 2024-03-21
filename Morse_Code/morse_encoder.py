@@ -1,4 +1,4 @@
-#import RPi.GPIO as rpi
+import RPi.GPIO as rpi
 from time import sleep
 import numpy as np
 
@@ -28,9 +28,33 @@ for message in lines:
             translation += code + '   ' 
     translation += '- . - | OVER \n' 
 print (translation)
+
+#Setup GPIO
+pin = 5
+freq = 1000
+RPI.setwarnings(False)
+RPI.setmode(RPI.BCM)
+RPI.setup(pin, RPI.OUT, initial=RPI.LOW)
+half_period = ((1/freq)/2) #calculating sleep times for high and low sections
+
+for c in translation:
+    if c == '.':
+        for x in range(200):
+            RPI.output(pin, RPI.HIGH) #generating square wave
+            sleep(half_period)
+            RPI.output(pin, RPI.LOW)
+            sleep(half_period)
         
-#f = open('encoded_message.txt', 'w')
-#f.write(translation)
-#f.close()
+    elif c == '-':
+        for x in range(400):
+            RPI.output(pin, RPI.HIGH) #generating square wave
+            sleep(half_period)
+            RPI.output(pin, RPI.LOW)
+            sleep(half_period)
 
+    elif c = '|':
+        sleep(.5)
 
+f = open('encoded_message.txt', 'w')
+f.write(translation)
+f.close()
