@@ -92,8 +92,7 @@ loop:
 on_delay:
 	ldr		r6, #On_time
 on_loop:
-	adds	r6, r6, #1
-	subs	r6, r6, #1
+	adds	r6, r6, #0
 	subs	r6, r6, #1
 	subs	r6, r6, #1
 	bne		on_loop
@@ -102,8 +101,7 @@ on_loop:
 off_delay:
 	ldr		r6, #Off_time
 off_loop:
-	adds	r6, r6, #1
-	subs	r6, r6, #1
+	adds	r6, r6, #0
 	subs	r6, r6, #1
 	subs	r6, r6, #1
 	bne		off_loop
